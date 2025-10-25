@@ -80,58 +80,65 @@ int main(){
  
  if (days > 5 && (regfee > 12000)){
  	cout<<"3% discount on registration is "<< 0.03 * regfee<<endl
-	    <<"total amount on discount for registration is "<<regfee - (0.05 * regfee);
+	    <<"total amount on discount for registration is "<<regfee - (0.05 * regfee)<<endl;
   }
  else{
  	cout<<"You are not qualified for this registration discount"<<endl;
   }
 	 
 	 // total for everything
-	 if(location == 1){
+	 	 		//Random Bonus!
+    cout<<"Random Bonus for whoever is lucky enough!!"<<endl;
+ 	srand(time(0));
+ 	int	num_r = rand() % 100;
+ 	cout<< num_r<<endl;
+ 	
+	 if(location == 1 || (num_r == 7 || num_r == 77)){
 	 	int lodging_cost = lodgfee_1 * days;
 	    int	total = regfee + lodgfee_1;
+	    int bonus = total + 500;
 	 	cout<<"your total lodging cost is: "<<lodging_cost<<endl
-	 	    <<"Your total cost of everything is: "<<total <<endl;
+	 	    <<"Your total cost of everything is: "<<total <<endl
+	 	    <<"add 500 Naira to the total, "<<"total + bonus is "<<bonus<<endl;  
+ 	    
 	 }
-	 else if(location == 2){
+	 else if(location == 2 || (num_r == 7 || num_r == 77)){
 	 	 int lodging_cost = lodgfee_2 * days;
 	 	 int total = regfee + lodgfee_2;
+	 	 int bonus = total + 500;
 	    	cout<<"your total lodging cost is: "<<lodging_cost<<endl
-	 	        <<"Your total cost of everything is: "<<total <<endl;
+	 	        <<"Your total cost of everything is: "<<total <<endl
+	 	        <<"add 500 Naira to the total, "<<"total + bonus is "<<bonus<<endl;  
 	 }
-	 else if(location == 3){
+	 else if(location == 3 || (num_r == 7 || num_r == 77)){
 	 	 int lodging_cost = lodgfee_3 * days;
 	 	 int total = regfee + lodgfee_3;
+	 	 int bonus = total + 500;
 	 		cout<<"your total lodging cost is: "<<lodging_cost<<endl
-	 	        <<"Your total cost of everything is: "<<total<<endl; 
-     } 
-      else if(location == 4){
+	 	        <<"Your total cost of everything is: "<<total<<endl
+	            <<"add 500 Naira to the total, "<<"total + bonus is "<<bonus<<endl;
+ 	  } 
+      else if(location == 4 || (num_r == 7 || num_r == 77)){
       	 int lodging_cost = lodgfee_4 * days;
 	 	 int total = regfee + lodgfee_4;
+	     int bonus = total + 500; 
 	 		cout<<"your total lodging cost is: "<<lodging_cost<<endl
-	 	    <<"Your total cost of everything is: "<<total<<endl; 
+	 	    <<"Your total cost of everything is: "<<total<<endl
+	 	    <<"add 500 Naira to the total, "<<"total + bonus is "<<bonus<<endl;
+	
      } 
-      else if(location == 5){
+      else if(location == 5 || (num_r == 7 || num_r == 77)){
 	 		 int lodging_cost = lodgfee_5* days;
 	     	 int total = regfee + lodgfee_5;
-	 		cout<<"your total lodging cost is: "<<lodging_cost<<endl
-	 	    <<"Your total cost of everything is: "<<total<<endl;
+	    	 int bonus = total + 500;   	 
+	   	 	cout<<"your total lodging cost is: "<<lodging_cost<<endl
+	 	    <<"Your total cost of everything is: "<<total<<endl
+	 	    <<"add 500 Naira to the total, "<<"total + bonus is "<<bonus<<endl;	 
      } 
      else{
      	cout<<"You are not qualified to lodge in our company"<<endl;
 	 }
-	
-	//Random Bonus!
-    cout<<"Random Bonus for whoever is lucky eniugh!!"<<endl;
- 	srand(time(0));
- 	int	num_r = rand() % 100;
- 	cout<< num_r;
- 	
- 	if (num_r == 7 || num_r == 77){
- 		int total;
- 		int bonus = total + 500;
- 		cout<<"add 500 Naira to the total, "<<"total + bonus is "<<bonus<<endl;
-	 } 
+   
 
 return 0;
 }
