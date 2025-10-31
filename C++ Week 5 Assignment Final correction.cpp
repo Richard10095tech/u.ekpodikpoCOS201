@@ -11,38 +11,71 @@ int main(){
 
   cout<<"enter your full name: "<<endl;
   string name;
-  cin>> name;
+  getline(cin, name);
 
   cout<<"Are you a PAU student? (1 = yes(true)/0 = no(false)) "<<endl;
   bool PAU_student;
   cin>> PAU_student; 	
 
    if (PAU_student == 1){
-	cout<<"You are a PAU student"<<endl;
+	cout<<name<<", You are a PAU student"<<endl;
   } 
    else{
-	cout<<"You are not a PAU student"<<endl;
+	cout<<"You are not a PAU student, sorry you are not qualified to register"<<endl;
+	return 0;
   } 
   
-  cout<<"what is your registration fee? ";
-  int regfee;                 //for registration fee
-  cin>>regfee;
+  
+  int course;
+	cout<<"Enter Course (1-5)"<<endl
+	    <<" 1-- Photography for 10000"<<endl
+		<<" 2-- Painting for 8000"<<endl
+	    <<" 3-- Fish Farming for 15000"<<endl
+		<<" 4-- Baking for 13000"<<endl
+		<<" 5-- public speaking for 5000"<<endl
+		<<"choose any number for your course of choice: "<<endl;
+	cin>>course;
+   
+   cout<<"what is your registration fee? ";
+   int regfee;                 //for registration fee
+   cin>>regfee;
+	
 
    //Choice of Courses
- string c1 = "Photography";  
+ int photography = 1;  
  // regfee = 10000;
       
- string c2 = "Painting";
+ int painting = 2;
  // regfee = 8000;
  
- string c3 = "Fish Farming";
+ int fish_farming = 3;
  // regfee = 15000;
  
- string c4 = "Baking";
+ int baking = 4;
  // regfee = 13000;
  
- string c5 = "Public Speaking";
+ int public_speaking = 5;
  // regfee = 5000;
+ 
+ if(course == 1){
+ 	cout<<"You have choosen photography and your fee will be 10000"<<endl;
+ }
+ else if(course == 2){
+ 	cout<<"You have choosen painting and your fee will be 8000"<<endl;
+ }
+ else if(course == 3){
+ 	cout<<"You have choosen fish farming and your fee will be 15000"<<endl;
+ }
+ else if(course == 4){
+ 	cout<<"You have choosen baking and your fee will be 13000"<<endl;
+ }
+ else if(course == 5){
+ 	cout<<"you have choosen public speaking and your fee will be 5000"<<endl;
+ }
+ else {
+ 	cout<<"Invalid course"<<endl;
+ 	return 0;
+ }
  
    //Choice of Locations and Their Lodging Fee per Day
  int Campus_House_A = 1;
@@ -63,11 +96,17 @@ int main(){
  cout<<"How many days do you want to use? "<<endl;
  int days;     //Amount of days used for lodging
  cin>> days;
- 
- cout<<"enter location: "<<endl;
+
  int location;
- cin>> location;
- 
+ cout<<"Enter Location (1-5)"<<endl
+     <<" 1--Campus House A"<<endl
+     <<" 2-- Campus House B"<<endl
+     <<" 3-- Campus House C"<<endl
+     <<" 4-- Campus House D"<<endl
+     <<" 5-- Campus House E"<<endl
+	 <<"choose any location of your choice: "<<endl;
+    cin>>location;
+     
  if (PAU_student == 1 && (location == 1 || location == 2)){
  	cout<<"5% discount on lodging for Campus House A is "<< 0.05 * lodgfee_1<<endl
  	    <<"total amount on discount for Campus House A is "<<lodgfee_1 - (0.05 * lodgfee_1)<<endl
@@ -95,7 +134,7 @@ int main(){
  	
 	 if(location == 1 || (num_r == 7 || num_r == 77)){
 	 	int lodging_cost = lodgfee_1 * days;
-	    int	total = regfee + lodgfee_1;
+	    int	total = regfee + lodging_cost;
 	    int bonus = total + 500;
 	 	cout<<"your total lodging cost is: "<<lodging_cost<<endl
 	 	    <<"Your total cost of everything is: "<<total <<endl
@@ -104,7 +143,7 @@ int main(){
 	 }
 	 else if(location == 2 || (num_r == 7 || num_r == 77)){
 	 	 int lodging_cost = lodgfee_2 * days;
-	 	 int total = regfee + lodgfee_2;
+	 	 int total = regfee + lodging_cost;
 	 	 int bonus = total + 500;
 	    	cout<<"your total lodging cost is: "<<lodging_cost<<endl
 	 	        <<"Your total cost of everything is: "<<total <<endl
@@ -112,7 +151,7 @@ int main(){
 	 }
 	 else if(location == 3 || (num_r == 7 || num_r == 77)){
 	 	 int lodging_cost = lodgfee_3 * days;
-	 	 int total = regfee + lodgfee_3;
+	 	 int total = regfee + lodging_cost;
 	 	 int bonus = total + 500;
 	 		cout<<"your total lodging cost is: "<<lodging_cost<<endl
 	 	        <<"Your total cost of everything is: "<<total<<endl
@@ -120,7 +159,7 @@ int main(){
  	  } 
       else if(location == 4 || (num_r == 7 || num_r == 77)){
       	 int lodging_cost = lodgfee_4 * days;
-	 	 int total = regfee + lodgfee_4;
+	 	 int total = regfee + lodging_cost;
 	     int bonus = total + 500; 
 	 		cout<<"your total lodging cost is: "<<lodging_cost<<endl
 	 	    <<"Your total cost of everything is: "<<total<<endl
@@ -129,7 +168,7 @@ int main(){
      } 
       else if(location == 5 || (num_r == 7 || num_r == 77)){
 	 		 int lodging_cost = lodgfee_5* days;
-	     	 int total = regfee + lodgfee_5;
+	     	 int total = regfee + lodging_cost;
 	    	 int bonus = total + 500;   	 
 	   	 	cout<<"your total lodging cost is: "<<lodging_cost<<endl
 	 	    <<"Your total cost of everything is: "<<total<<endl
