@@ -1,0 +1,53 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+	int year;
+	
+	cout<<"To get your Zodiac Sign, \n";
+	cout<<"Enter your year: \n";
+	cin>>year;
+	
+	int zodiac_sign = year % 12;
+	
+	switch(zodiac_sign){
+		case 0:
+			cout<<"Monkey";
+			break;
+		case 1:
+		    cout<<"Rooster";
+		    break;
+		case 2:
+		    cout<<"Dog";
+		     break; 
+		case 3:
+		    cout<<"Pig";
+		      break;
+		case 4:
+		    cout<<"Rat";
+		      break;
+		case 5:
+		    cout<<"Ox";
+		      break;
+		case 6:
+		    cout<<"Tiger";
+		      break;
+		case 7:
+		    cout<<"Rabbit";
+		      break;
+		case 8:
+		    cout<<"Dragon";
+		      break;
+		case 9:
+		    cout<<"Snake";
+		      break;
+		case 10:
+		    cout<<"Horse";
+		      break;
+		case 11:
+		    cout<<"Sheep";
+		      break;
+		default:
+		    cout<<"Not a Zodiac Sign";																						
+	}
+}
